@@ -3,15 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project-Weather-App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div class="container">
-        <p id="location-text">location: </p>
-        <input type="text" id="location" name="location">
-        <button id="search-btn">search</button>
+        <h1 class="app-title">ShineProdigy</h1>
+        
+        <div class="search-container">
+            <input type="text" id="location-search" placeholder="Enter city...">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-container hide">
+            <div class="error-icon">!</div>
+            <h2 class="error-title">Oops! Something went wrong</h2>
+            <p class="error-message">Unable to fetch weather data. Please try again.</p>
+          
+        </div>
+
+        <div class="weather-card">
+            <div class="location-info">
+                <h2 class="location">Loading...</h2>
+                <p class="timezone">Timezone</p>
+            </div>
+            
+            <div class="temperature-main">
+                <h1 class="temperature">--°F</h1>
+                <p class="conditions">Weather conditions</p>
+            </div>
+
+            <div class="weather-description">
+                <p class="description">Weather description will appear here.</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-box">
+                    <h3>FEELS LIKE</h3>
+                    <p class="value feels-like">--°F</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>HUMIDITY</h3>
+                    <p class="value humidity">--%</p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>DATE & TIME</h3>
+                    <p class="value datetime">--:--</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+
 </body>
-</html>
+</html> 

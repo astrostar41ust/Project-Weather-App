@@ -1,0 +1,249 @@
+:root {
+  --background-color: #000000;
+  --card-background: #111111;
+  --text-color: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-blue: #007aff;
+  --light-blue: #66b2ff;
+  --border-radius: 12px;
+  --box-background: rgba(0, 122, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background-color: var(--background-color);
+  background: linear-gradient(135deg, #000000, #001933);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  color: var(--light-blue);
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(102, 178, 255, 0.3);
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#location-search {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 122, 255, 0.3);
+  border-radius: var(--border-radius);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#location-search:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+#location-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#search-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#search-btn:hover {
+  background-color: var(--light-blue);
+  transform: translateY(-1px);
+}
+
+.weather-card {
+  background-color: var(--card-background);
+  background: linear-gradient(160deg, #111111, #001933);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  color: var(--text-color);
+  border: 1px solid rgba(0, 122, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 122, 255, 0.1);
+}
+
+.location-info {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.location {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 500;
+  color: var(--light-blue);
+}
+
+.timezone {
+  margin: 0.5rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.temperature-main {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.temperature {
+  font-size: 5.5rem;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  background: linear-gradient(to right, var(--light-blue), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(102, 178, 255, 0.3);
+}
+
+.conditions {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.weather-description {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem;
+  background-color: var(--box-background);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.description {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.detail-box {
+  background-color: var(--box-background);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  text-align: center;
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.detail-box:hover {
+  background-color: rgba(0, 122, 255, 0.15);
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.detail-box h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--light-blue);
+}
+
+.detail-box .value {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .weather-card {
+    padding: 1.5rem;
+  }
+
+  .temperature {
+    font-size: 4rem;
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-box {
+    padding: 1rem;
+  }
+}
+
+
+/* Error State */
+.error-container {
+  text-align: center;
+  padding: 3rem;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+}
+
+.error-icon {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: rgba(255, 59, 48, 0.1);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #ff3b30;
+  margin: 0 auto 1.5rem;
+  font-weight: bold;
+}
+
+.error-title {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.error-message {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
